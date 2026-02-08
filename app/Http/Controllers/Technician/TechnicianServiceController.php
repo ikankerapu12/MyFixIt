@@ -390,9 +390,6 @@ public function TechnicianUpdateBooking(Request $request)
         'invoice' => 'MFI'.mt_rand(10000000,99999999),
     ]);
 
-    $siteSettings = SiteSetting::first();
-    // Send the booking details as an object
-    Mail::to($request->email)->send(new BookingMail($sendmail, $siteSettings));
 
     // Notification after success
     $notification = [
@@ -414,10 +411,6 @@ public function TechnicianRejectBooking(Request $request)
         'rejection_message' => $request->rejection_message  // Store the rejection reason
     ]);
 
-    $siteSettings = SiteSetting::first();
-    // Send the booking details as an object
-    Mail::to($request->email)->send(new BookingMail($sendmail, $siteSettings));
-
     // Notification after rejection
     $notification = [
         'message' => 'Booking Request has been Rejected',
@@ -437,10 +430,6 @@ public function TechnicianCancelBooking(Request $request)
         'status' => '3',  // Cancelled status
         'cancellation_message' => $request->cancellation_message,
     ]);
-
-    $siteSettings = SiteSetting::first();
-    // Send the booking details as an object
-    Mail::to($request->email)->send(new BookingMail($sendmail, $siteSettings));
 
     // Notification after cancellation
     $notification = [

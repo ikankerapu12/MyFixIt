@@ -15,38 +15,38 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class SettingController extends Controller
 {
-    public function SmtpSetting(){
+    // public function SmtpSetting(){
 
-        $setting = SmtpSetting::find(1);
-        return view('backend.setting.smpt_update',compact('setting'));
+    //     $setting = SmtpSetting::find(1);
+    //     return view('backend.setting.smpt_update',compact('setting'));
 
-    }
-
-
-    public function UpdateSmtpSetting(Request $request){
-
-        $stmp_id = $request->id;
-
-        SmtpSetting::findOrFail($stmp_id)->update([
-
-                'mailer' => $request->mailer,
-                'host' => $request->host,
-                'port' => $request->port,
-                'username' => $request->username,
-                'password' => $request->password,
-                'from_address' => $request->from_address, 
-        ]);
+    // }
 
 
-           $notification = array(
-            'message' => 'Smtp Setting Updated Successfully',
-            'alert-type' => 'success'
-        );
+    // public function UpdateSmtpSetting(Request $request){
 
-        return redirect()->back()->with($notification);
+    //     $stmp_id = $request->id;
+
+    //     SmtpSetting::findOrFail($stmp_id)->update([
+
+    //             'mailer' => $request->mailer,
+    //             'host' => $request->host,
+    //             'port' => $request->port,
+    //             'username' => $request->username,
+    //             'password' => $request->password,
+    //             'from_address' => $request->from_address, 
+    //     ]);
 
 
-    }
+    //        $notification = array(
+    //         'message' => 'Smtp Setting Updated Successfully',
+    //         'alert-type' => 'success'
+    //     );
+
+    //     return redirect()->back()->with($notification);
+
+
+    // }
 
     public function SiteSetting(){
 

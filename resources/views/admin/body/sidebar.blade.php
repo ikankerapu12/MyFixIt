@@ -197,12 +197,12 @@
 
 
 
-            <li class="nav-item {{ Request::routeIs('smtp.setting') ? 'active' : '' }}">
+            {{-- <li class="nav-item {{ Request::routeIs('smtp.setting') ? 'active' : '' }}">
             <a href="{{ route('smtp.setting') }}" class="nav-link">
               <i class="link-icon" data-feather="database"></i>
               <span class="link-title">SMTP Setting </span>
             </a>
-          </li>
+          </li> --}}
 
           <li class="nav-item {{ Request::routeIs('site.setting') ? 'active' : '' }}">
             <a href="{{ route('site.setting') }}" class="nav-link">
